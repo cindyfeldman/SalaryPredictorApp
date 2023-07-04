@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.depressionriskapp.databinding.StartFragmentBinding;
 
-public class StartFragment extends Fragment {
+public class PredictionPageFragment extends Fragment {
 
     private StartFragmentBinding binding;
     private Button startButton;
@@ -33,7 +33,7 @@ public class StartFragment extends Fragment {
        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(StartFragment.this)
+                NavHostFragment.findNavController(PredictionPageFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });

@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.depressionriskapp.databinding.FragmentSecondBinding;
+import com.example.depressionriskapp.databinding.UserInputFragmentBinding;
 
 public class UserInputFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private UserInputFragmentBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class UserInputFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = UserInputFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
