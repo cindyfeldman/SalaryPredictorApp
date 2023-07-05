@@ -7,21 +7,189 @@
     tools:context=".UserInputFragment">
 
     <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:id="@+id/gender_select_textview"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Please Select you Gender"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="296dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_select_textview">
+
+        <RadioButton
+            android:id="@+id/male_radioB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female_radioB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/na_radioB"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:text="Prefer Not to Answer" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/age_input"
+        android:layout_width="99dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/age_textview"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/age_textview"
+        android:layout_width="251dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Please Enter your Age"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/anxiety_textview"
+        android:layout_width="201dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Do you currently experience anxiety?"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_textview" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="192dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation='horizontal'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/anxiety_textview"
+        app:layout_constraintTop_toBottomOf="@+id/age_input">
+
+        <RadioButton
+            android:id="@+id/yes_axiety_radio"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="YES" />
+
+        <RadioButton
+            android:id="@+id/no_anxiety_radio"
+            android:layout_width="63dp"
+            android:layout_height="match_parent"
+            android:text="NO" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/major_textview"
+        android:layout_width="307dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="20dp"
+        android:text="Prospective Major (select one)"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/major_select_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anxiety_textview" />
+
+    <Spinner
+        android:id="@+id/major_select_spinner"
+        android:layout_width="337dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/year_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/major_textview" />
+
+    <TextView
+        android:id="@+id/year_textview"
+        android:layout_width="391dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Current Year in Undergraduate Degree"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/major_select_spinner" />
+
+    <Spinner
+        android:id="@+id/year_select_spinner"
+        android:layout_width="337dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_textview" />
+
+    <TextView
+        android:id="@+id/gpa_textview"
+        android:layout_width="136dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Current GPA"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_select_spinner" />
+
+    <EditText
+        android:id="@+id/gpa_input"
+        android:layout_width="168dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/gpa_textview"
+        app:layout_constraintTop_toBottomOf="@+id/year_select_spinner" />
 
     <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:id="@+id/submit_input_button"
+        android:layout_width="158dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="32dp"
+        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/gpa_input"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

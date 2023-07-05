@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.depressionriskapp.databinding.FragmentFirstBinding;
+import com.example.depressionriskapp.databinding.StartFragmentBinding;
 
 public class StartFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private StartFragmentBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class StartFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = StartFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
