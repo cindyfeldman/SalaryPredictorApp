@@ -20,9 +20,17 @@
         android:name="com.example.depressionriskapp.UserInputFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/user_input_fragment">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/StartFragment" />
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+        <argument
+            android:name="prediction"
+            app:argType="string"
+            android:defaultValue="loading" />
     </fragment>
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.example.depressionriskapp.PredictionFragment"
+        android:label="thirdFragment"
+        tools:layout="@layout/fragment_prediction_page_fragment"/>
 </navigation>

@@ -19,6 +19,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
 import org.json.JSONArray;
 import  org.json.JSONException;
 import org.json.JSONObject;
@@ -58,7 +60,7 @@ public class UserInputFragment extends Fragment {
     String currYearSelected = "";
     String gpaInputted = "";
     String apiEndpoint = "http://10.0.2.2:5000/predict";
-
+    String predictionText = "";
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -107,7 +109,6 @@ public class UserInputFragment extends Fragment {
         //Populate the major dropdown with values from the csv file
         try {
             Scanner scanner = new Scanner(requireContext().getAssets().open("student_mental_health.csv"));
-            // Read the header row to identify the column index
 
             if (scanner.hasNextLine()) {
                 String headerLine = scanner.nextLine();
@@ -208,9 +209,32 @@ public class UserInputFragment extends Fragment {
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    System.out.println(
+                            responseData.substring(1,2)
+                    );
+                    Bundle args = new Bundle();
+                    predictionText =  responseData.substring(1,2);
+                    System.out.println("type : "+ predictionText);
+                    if(predictionText.equals( "0")){
+                        predictionText = "NO";
+                    }
+                    else if(predictionText == "1"){
+                        predictionText = "YES";
+                    }
+                    else{
+                        predictionText = "error";
+                    }
+                    args.putString("prediction", predictionText);
+                    System.out.println("prediction: " + predictionText);
+                    NavHostFragment.findNavController(UserInputFragment.this).navigate(R.id.action_SecondFragment_to_ThirdFragment,args);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+
+
             }
         });
 
